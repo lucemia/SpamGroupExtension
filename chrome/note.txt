@@ -1,0 +1,6 @@
+https://www.facebook.com/ajax/bookmark/groups/leave/?group_id=456515654377153&__asyncDialog=1&__user=1025586530&__a=1&__dyn=7n8ahyj35Cwg98&__req=8
+
+
+var evt = document.createEvent("MouseEvents");
+evt.initEvent("click", true, true);
+el.dispatchEvent(evt);
