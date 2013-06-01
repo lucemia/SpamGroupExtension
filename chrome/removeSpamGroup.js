@@ -17,12 +17,24 @@ jsonp('http://spamgroup.tonyq.org/groups/json/', function(data) {
     for(var k=0;k<data.length;k++) {
         group_list.push(data[k]["GID"]);
     }
-    group_list.push("239817729371068");
     console.log(group_list);
     detectSpamGroup(group_list);
 });
 
 function detectSpamGroup(group_list) {
+    // high light spam group
+    var groups = document.getElementsByClassName('pvm');
+    for(var i=0;i<groups.length;i++) {
+        var group = groups[i];
+        if(group.href) {
+            var match = group.href.match(/groups\/([\d]+)\//);
+            if(match && group_list.indexOf(match[1]) >= 0) {
+                group.style.backgroundColor="red";
+            }
+        }
+    }
+
+
     var nodes = document.getElementsByClassName('itemAnchor');
     var onleaveInt = null;
 
