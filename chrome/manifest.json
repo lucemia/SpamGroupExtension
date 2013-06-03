@@ -13,13 +13,14 @@
   },
   "manifest_version": 2,
   "content_scripts": [{
-    "matches": ["*://www.facebook.com/bookmarks/groups*"],
-    "js": ["removeSpamGroup.js"]
+    "matches": ["*://www.facebook.com/*"],
+    "js": ["antiSpam.js"]
   }],
   "permissions": [
     "http://spamgroup.tonyq.org/"
   ],
   "web_accessible_resources": [
-    "http://spamgroup.tonyq.org/groups/json/"
+    "http://spamgroup.tonyq.org/groups/json/",
+    "http://spamgroup.tonyq.org/users/json/"
   ]
 }
